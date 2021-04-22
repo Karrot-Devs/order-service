@@ -11,3 +11,9 @@ export interface OrderDTO {
   amount: number;
   address: string;
 }
+
+export interface OrderStatusChangeEvent {
+  data: any;
+  id?: string;
+  retry?: number;
+}

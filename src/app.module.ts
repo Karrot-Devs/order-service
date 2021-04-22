@@ -6,6 +6,7 @@ import TypeOrmConfigService from './config/database.config';
 import configuration from './config/configuration';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       isGlobal: true,
       load: [configuration],
     }),
+    EventEmitterModule.forRoot(),
     OrderModule,
   ],
   controllers: [AppController],
